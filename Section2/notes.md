@@ -26,3 +26,54 @@ end
 
 say_hello
 ```
+
+# Introduction to Ruby 
+Ruby resource: [ruby-lang](www.ruby-lang.org)
+
+To view current directory: `pwd` 
+
+To create a directory: `mkdir directory_name` 
+
+To move into a directory: `cd directory_name`
+
+To list all directories and files within current directory: `ls`
+
+To list all directories and files within the current directory including hidden files: `ls -a` 
+
+To move out of a directory (1 level up the tree): `cd ..` 
+
+To print hello world to the console or output: `puts "Hello World!"`
+
+To run a ruby file from the command line, `ruby your_file_name.rb`
+
+To create a variable called hello and print the value of hello:
+
+```ruby
+hello = "Hello World!"
+puts hello
+```
+Structure of a method in Ruby:
+
+```ruby
+def methodname
+    # contents of the method
+end 
+```
+
+To write a method to say hello world: 
+
+```ruby 
+def say_hello
+    puts "Hello World!"
+end 
+```
+
+Then call the method by simply referencing the name: `say_hello`
+
+Updated hello method:
+
+```ruby
+def say_hello(thing_to_say)
+    puts thing_to_say
+end
+```
