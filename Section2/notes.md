@@ -91,3 +91,48 @@ Classes - can call `.class` on anything to see what it is. Can call it on `full_
 Nil itself is nil. 
 
 Pass by Value/Pass by reference. In Ruby, always think if a variable is pointing to another variable, it's actually pointing to the location in memory where that variable is pointing to. 
+
+# Working with Strings: Part 2 - Getting input from a user 
+
+What if we want to prompt the user for their first name? 
+
+Need to use `gets.chomp` 
+
+```ruby
+puts "What is your first name?"
+first_name = gets.chomp
+puts "Thank you, you said your first name is #{first_name}"
+```
+
+`gets.chomp` gets you a string
+
+```ruby
+puts "Enter a number to multiply by 2"
+input = gets.chomp
+puts input * 2 
+# string concatenation 5 will return 55 "5" + "5"
+```
+
+Have to convert the input to a number or int. 
+
+```ruby
+puts "Enter a number to multiply by 2"
+input = gets.chomp
+puts input.to_i * 2 
+```
+
+```ruby
+puts "What is your first name?"
+first_name = gets.chomp
+puts "What is your last name?"
+last_name = gets.chomp
+```
+
+Analyzer homework, making a file, analyzer.rb you want to have a program that asks 
+Enter your first name
+returns it 
+Enter your last name
+returns it
+Your full name is ....
+Your full name reversed is ....
+Your name has _ characters in it. (skipping the space)

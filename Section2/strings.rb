@@ -71,3 +71,8 @@ first_name
 'Dani asked 'Hey John, how are you doing?''
 # syntax error 
 'Dani asked \'Hey John, how are you doing?\'' # will let us escape this.
+
+# Getting input from a user 
+puts "What is your first name?"
+first_name = gets.chomp
+puts "Thank you, you said your first name is #{first_name}"
