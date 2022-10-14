@@ -92,6 +92,12 @@ Nil itself is nil.
 
 Pass by Value/Pass by reference. In Ruby, always think if a variable is pointing to another variable, it's actually pointing to the location in memory where that variable is pointing to. 
 
+To escape the evaluation of #{variablename} within a String, prepend with a \:
+
+`\#{variablename}`
+
+
+
 # Working with Strings: Part 2 - Getting input from a user 
 
 What if we want to prompt the user for their first name? 
