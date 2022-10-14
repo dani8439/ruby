@@ -77,3 +77,17 @@ def say_hello(thing_to_say)
     puts thing_to_say
 end
 ```
+
+# Working with Strings: Part 1
+
+Strings are defined by being put in double quotes `""`, or single quotes `''`
+
+With single quotes, can't do string interpolation.
+
+String interpolation, use the value of your variables within the string. Single quotes won't work, will just pring out the string itself `My first name is #{first_name} and my last name is #{last_name}`
+
+Classes - can call `.class` on anything to see what it is. Can call it on `full_name.class` and see it's a String
+
+Nil itself is nil. 
+
+Pass by Value/Pass by reference. In Ruby, always think if a variable is pointing to another variable, it's actually pointing to the location in memory where that variable is pointing to. 
