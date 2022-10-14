@@ -177,3 +177,23 @@ puts '-'*20
 
 x = "5".to_i
 ```
+
+# Comparison Operators 
+
+When you're trying to compare 2 items.
+
+```ruby
+== 
+!= 
+>
+<
+
+10 == "10".to_f 
+# true 10 and 10.0 are the same in Ruby
+10 === "10"
+# true 
+10.eql?(10.0)
+# false
+# why?
+```
+`.eql?` is actually comparing the types, so an integer and a float are not the same. 
