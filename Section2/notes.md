@@ -142,3 +142,38 @@ returns it
 Your full name is ....
 Your full name reversed is ....
 Your name has _ characters in it. (skipping the space)
+
+# Working with Numbers
+
+Ctrl + L is how you go to the top of the screen in irb. 
+
+Ruby drops the decimal with division. To do it correctly, have to convert one to a float. 
+
+```ruby
+
+10/4 
+# 2
+
+10.0 / 4
+# 2.5
+
+# Have to be careful
+(10 / 4).to_f 
+# 2.0 ... did the brackets first, didn't convert to a floating point number
+
+"5" * "5" 
+# (irb):1:in `*': no implicit conversion of String into Integer (TypeError)
+# BUT, can do 
+"5" * 2 
+# 55
+
+2 * "5"
+# (irb)String can't be coerced into Integer (TypeError)
+
+puts '-'*20
+# --------------------
+
+20.times { puts rand(10)} # rand is not inclusive of 0 - 9, not 1-10, rand random number between 0 and 1 unless specified
+
+x = "5".to_i
+```
