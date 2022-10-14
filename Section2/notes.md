@@ -197,3 +197,8 @@ When you're trying to compare 2 items.
 # why?
 ```
 `.eql?` is actually comparing the types, so an integer and a float are not the same. 
+
+# Methods
+When building our calculator, say it all done within the put statement itself. Not a good idea. Better to put it into a method.
+
+In ruby, last evaluated statement is automatically returned. If it's the only expression, or the last, don't need to use a `return` statement. 
