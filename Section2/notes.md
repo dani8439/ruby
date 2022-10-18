@@ -253,3 +253,5 @@ another_hash = {a: 1, b: 2, c:3}
 ```
 
 Symbols are all over the place in rails. Ruby is smart enough to know we wanted a, b, and c to be symbols. `[:session], [:username]` all symbols. See them all over rails. 
+
+# Homework project Authenticator 
