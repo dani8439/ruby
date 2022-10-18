@@ -11,6 +11,13 @@ puts "Welcome to authenticator"
 25.times { print "-" }
 puts 
 puts "This program will take input from the user and compare password"
+puts "Username"
+username = gets.chomp 
+puts "Password"
+password = gets.chomp 
+
+# If username is correct... if else statement here 
+
 # prompt for username
 # prompt for password 
 # Credentials were not correct 
