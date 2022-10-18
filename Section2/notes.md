@@ -202,3 +202,30 @@ When you're trying to compare 2 items.
 When building our calculator, say it all done within the put statement itself. Not a good idea. Better to put it into a method.
 
 In ruby, last evaluated statement is automatically returned. If it's the only expression, or the last, don't need to use a `return` statement. 
+
+# Branching if/else conditionals 
+
+```ruby
+# if/else 
+
+if true 
+    # execute some code 
+else 
+    # execute some other code 
+end 
+```
+Can do without the `else`. 
+
+```ruby
+# Most popular way to branch
+name = "Evgeny"
+if name == "Dani"
+    puts "Welcome to the program, Dani"
+elsif name == "Jack"
+    puts "Welcome to the program, Jack"
+elsif name == "Evgeny"
+    puts "Go back to helping students Evgeny"
+else 
+    puts "Welcome to the program, User"
+end
+```
