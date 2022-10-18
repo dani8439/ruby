@@ -229,3 +229,9 @@ else
     puts "Welcome to the program, User"
 end
 ```
+
+# Arrays and Iterators
+
+`[]` 
+- Anything within the brackets is an array. An ordered list of items. Each one can be anything, number, string, another array, hash, objects. 
+- Maintains an index. (starts at 0)
