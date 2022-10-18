@@ -235,3 +235,21 @@ end
 `[]` 
 - Anything within the brackets is an array. An ordered list of items. Each one can be anything, number, string, another array, hash, objects. 
 - Maintains an index. (starts at 0)
+
+# Hashes aka Dictionaries 
+
+```ruby
+sample_hash = {'a' => 1, 'b' => 2, 'c' => 3}
+my_details = {'name' => 'dani', 'favcolor' => 'black'}
+my_details['favcolor']
+my_hash = {}
+```
+
+Everything's a string in the key value pairs. But rails also gives you a symbol. 
+
+```ruby
+another_hash = {a: 1, b: 2, c:3}
+# {:a=>1, :b=>2, :c=>3}
+```
+
+Symbols are all over the place in rails. Ruby is smart enough to know we wanted a, b, and c to be symbols. `[:session], [:username]` all symbols. See them all over rails. 

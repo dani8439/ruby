@@ -52,7 +52,7 @@ b.split # split puts it into an array.
 b.split("-") # ["Dani", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 %w(my name is bob and Ruby is amazing)
 ["my", "name", "is", "bob", "and", "Ruby", "is", "amazing"]
-z = _ # grabs last expression. 
+# z = _ # grabs last expression. 
 z # ["my", "name", "is", "bob", "and", "Ruby", "is", "amazing"]
 
 # traditional way in other languages
@@ -75,4 +75,6 @@ z.select
 
 z = (1..100).to_a.shuffle
 z.select{|number| number.odd?}
+
+p a.methods
 
