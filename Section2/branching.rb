@@ -77,11 +77,11 @@ puts "Enter 1 for multiply, 2 for addition, 3 for subtraction"
 user_entry = gets.chomp 
 # puts "You selected #{user_entry}"
 if user_entry == "1"
-    puts "You have chosen to multiply #{first_number} and #{second_number}. The result is #{multiply(first_number, second_number)}"
+  puts "You have chosen to multiply #{first_number} and #{second_number}. The result is #{multipl  (first_number, second_number)}"
 elsif user_entry == "2"
-    puts "You have chosen to add #{first_number} and #{second_number}. The result is #{add(first_number, second_number)}"
+  puts "You have chosen to add #{first_number} and #{second_number}. The result is #{add(first_number,  second_number)}"
 elsif user_entry == "3"
-    puts "You have chosen to subtract #{first_number} and #{second_number}. The result is #{subtract(first_number, second_number)}"
+  puts "You have chosen to subtract #{first_number} and #{second_number}. The result is #{subtrac  (first_number, second_number)}"
 else 
-    puts "Invalid entry"
+  puts "Invalid entry"
 end

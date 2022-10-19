@@ -254,4 +254,24 @@ another_hash = {a: 1, b: 2, c:3}
 
 Symbols are all over the place in rails. Ruby is smart enough to know we wanted a, b, and c to be symbols. `[:session], [:username]` all symbols. See them all over rails. 
 
-# Homework project Authenticator 
+# Ruby Style Guide
+
+```ruby
+this_is_snake_case # want to use for methods and variable assignment
+
+also_snake_case
+
+# ruby uses 2 spaces, not 4 of a tab automatic indentation
+def my_name_is 
+  # and my code is here
+end
+
+CamelCase 
+
+camelCase 
+
+class SomeClass
+end
+```
+
+**Ruby Style Guide** (https://github.com/rubocop/ruby-style-guide)[https://github.com/rubocop/ruby-style-guide]

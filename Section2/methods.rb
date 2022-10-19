@@ -1,23 +1,23 @@
 # Rewrite the analyzer with methods
 
 def multiply(first_num, second_num)
-    first_num.to_f * second_num.to_f
+  first_num.to_f * second_num.to_f
 end 
 
 def divide(first_num, second_num)
-    first_num.to_f / second_num.to_f
+  first_num.to_f / second_num.to_f
 end
 
 def add(first_num, second_num)
-    first_num.to_f + second_num.to_f
+  first_num.to_f + second_num.to_f
 end 
 
 def subtract(first_num, second_num)
-    first_num.to_f - second_num.to_f
+  first_num.to_f - second_num.to_f
 end 
 
 def modulo(first_num, second_num)
-    first_num.to_f % second_num.to_f
+  first_num.to_f % second_num.to_f
 end
 
 puts "Enter the first number"
