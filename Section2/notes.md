@@ -21,7 +21,7 @@ Keyword `def` short for define. Space. Then method name. End keyword at the end.
 
 ```ruby
 def say_hello
-    puts "Hello World"
+  puts "Hello World"
 end
 
 say_hello
@@ -56,7 +56,7 @@ Structure of a method in Ruby:
 
 ```ruby
 def methodname
-    # contents of the method
+  # contents of the method
 end 
 ```
 
@@ -64,7 +64,7 @@ To write a method to say hello world:
 
 ```ruby 
 def say_hello
-    puts "Hello World!"
+  puts "Hello World!"
 end 
 ```
 
@@ -74,7 +74,7 @@ Updated hello method:
 
 ```ruby
 def say_hello(thing_to_say)
-    puts thing_to_say
+  puts thing_to_say
 end
 ```
 
@@ -209,9 +209,9 @@ In ruby, last evaluated statement is automatically returned. If it's the only ex
 # if/else 
 
 if true 
-    # execute some code 
+  # execute some code 
 else 
-    # execute some other code 
+  # execute some other code 
 end 
 ```
 Can do without the `else`. 
@@ -220,13 +220,13 @@ Can do without the `else`.
 # Most popular way to branch
 name = "Evgeny"
 if name == "Dani"
-    puts "Welcome to the program, Dani"
+  puts "Welcome to the program, Dani"
 elsif name == "Jack"
-    puts "Welcome to the program, Jack"
+  puts "Welcome to the program, Jack"
 elsif name == "Evgeny"
-    puts "Go back to helping students Evgeny"
+  puts "Go back to helping students Evgeny"
 else 
-    puts "Welcome to the program, User"
+  puts "Welcome to the program, User"
 end
 ```
 
@@ -274,4 +274,5 @@ class SomeClass
 end
 ```
 
-**Ruby Style Guide** (https://github.com/rubocop/ruby-style-guide)[https://github.com/rubocop/ruby-style-guide]
+**Ruby Style Guide** [https://github.com/rubocop/ruby-style-guide)[https://github.com/rubocop/ruby-style-guide]
+
