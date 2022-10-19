@@ -279,3 +279,7 @@ end
 # Homework Project: Area Codes
 
 Area code interactive little program.
+
+# Practice what you have learnt
+
+(Try Ruby)[https://try.ruby-lang.org/]
