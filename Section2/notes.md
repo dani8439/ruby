@@ -347,4 +347,7 @@ Initialize method run whenever you create a new class, and sets all the values.
 
 Passwords not stored in strings. Stored as hashed digests in the db. A popular hashing algorithm is MD5. bcrypt uses this, and adds in a salt to it, to hash passwords. Creates a hash digest of the string. 
 
-gem install bcrypt
+`gem install bcrypt`
+
+# Final Ruby Project: Classes, Modules, Mix ins - 2 - methods
+
