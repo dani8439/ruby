@@ -283,3 +283,36 @@ Area code interactive little program.
 # Practice what you have learnt
 
 (Try Ruby)[https://try.ruby-lang.org/]
+
+# Intro To Object Oriented Programming 
+
+## Definition
+OOP is a programming paradigm that uses objects and their interactions to design and porgram applications. 
+
+EX:
+
+**University** 
+Student - to access the record, you pick out an individual student record and work with it. Limiting what the object can do, and you as the developer can set those parameters. 
+-- students - first name, last name, email, student it 
+Course 
+-- courses - course name, course description, course id. 
+
+An object in programming, is a "thing'. 
+Thing <---> Object, created from a class 'blueprint'
+- Features of the 'thing' <---> Attributes of the object, specified in class 
+
+Student <---> class 
+- First name, Last name, Username, Password (all attributes)
+
+Course <---> class 
+- course id, short name, name, description (attributes)
+
+Creating a class: 
+```ruby
+class Student 
+end
+```
+
+Work with instance variables inside classes. To create an object, you use the `new` keyword. 
+
+Classes by default have a `to_s` method. Whenever you try to print out that class, it defaults to that method, and prints out whatever is there. 
