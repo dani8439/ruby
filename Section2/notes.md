@@ -316,3 +316,29 @@ end
 Work with instance variables inside classes. To create an object, you use the `new` keyword. 
 
 Classes by default have a `to_s` method. Whenever you try to print out that class, it defaults to that method, and prints out whatever is there. 
+
+# Attributes, Getters, and Setters
+
+
+```ruby
+   def first_name=(name)
+        @first_name = name 
+    end 
+
+    def first_name 
+        @first_name
+    end 
+```
+Can go down this route creating setter and getter methods. But, much easier to just use attribute accesors which does it all for us. attribute accessors `attr_accessor` assigned using symbols. This method takes in these identities and makes them available. 
+
+
+Initialize method run whenever you create a new class, and sets all the values. 
+```ruby 
+    def initialize(firstname, lastname, username, email, password)
+      @first_name = firstname 
+      @last_name = lastname
+      @username = username 
+      @email = email 
+      @password = password 
+    end
+```
