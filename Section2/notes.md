@@ -351,3 +351,37 @@ Passwords not stored in strings. Stored as hashed digests in the db. A popular h
 
 # Final Ruby Project: Classes, Modules, Mix ins - 2 - methods
 
+Can't do this puts my_password == my_password_1 
+Only way to verify is to know the actual password to get the hashed value. 
+`puts my_password == "my password"`
+So can create a method that uses this to come up wtih passwords.
+
+```ruby 
+def create_hash_digest(password)
+    BCrypt::Password.create(password)
+end 
+
+new_password = create_hash_digest("password1")
+puts new_password == 'password1' # true 
+```
+
+How can we create a verification method? 
+
+```ruby
+def verify_hash_digest(password)
+    BCrypt::Password.new(password)
+end
+```
+
+Creating a hash of the users and passwords: 
+```ruby
+def create_secure_users(list_of_users)
+    # going through and creating a hash_digest of our users. 
+  list_of_users.each do |user_record|
+  user_record[:password] = create_hash_digest(user_record[:password])
+  end  
+  list_of_users
+end 
+```
+
+This is all how a module can be used in Ruby. Say have 5 or 6 methods like this put together, name it CRUD, and use it as a toolkit for whatever program we're working with. Can include a module into a class by doing a mixin. And then use the methods in that module inside that class. Becomes the tools of that class. Think of modules as toolkits and it gives you different tools for the things to use. 
