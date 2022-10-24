@@ -385,3 +385,63 @@ end
 ```
 
 This is all how a module can be used in Ruby. Say have 5 or 6 methods like this put together, name it CRUD, and use it as a toolkit for whatever program we're working with. Can include a module into a class by doing a mixin. And then use the methods in that module inside that class. Becomes the tools of that class. Think of modules as toolkits and it gives you different tools for the things to use. 
+
+# Final Ruby Project: Classes, Modules, Mix ins - 3 - methods
+
+Need a way to authenticate the user. Anticipating we'll get a username, and a password we need to authenticate it. Will get a hash password, and have to authenticate it.
+
+```ruby 
+def authenticate_user(username, password, list_of_users)
+  list_of_users.each do |user_record|
+    # if we have the username matching, and then the verified hash digest of the password equals the password sent in... 
+    if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password 
+      return user_record 
+    end 
+  end 
+  "Credentials were not correct"
+end
+```
+
+To convert it to a module, say `module Crud` and `end`
+
+```ruby
+module Crud 
+  require 'bcrypt'
+  puts "Module CRUD activated"
+
+  def create_hash_digest(password)
+    BCrypt::Password.create(password)
+  end 
+
+  def verify_hash_digest(password)
+    BCrypt::Password.new(password)
+  end
+
+  def create_secure_users(list_of_users)
+      # going through and creating a hash_digest of our users. 
+    list_of_users.each do |user_record|
+    user_record[:password] = create_hash_digest(user_record[:password])
+    end  
+    list_of_users
+  end 
+
+  def authenticate_user(username, password, list_of_users)
+    list_of_users.each do |user_record|
+      if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password 
+        return user_record 
+      end 
+    end 
+    "Credentials were not correct"
+  end
+end 
+```
+
+Then `require_relative 'crud'` in main.rb.
+
+```ruby
+# will also work
+$LOAD_PATH << "."
+require 'crud'
+```
+
+Except when running in main.rb, it doesn't work. Put `Crud.` in front of all method names in `crub.rb` then run the methods by calling `Crud.create_secure_users(users)`. That will not cause errors. Better to use the class mixin. 
