@@ -386,7 +386,7 @@ end
 
 This is all how a module can be used in Ruby. Say have 5 or 6 methods like this put together, name it CRUD, and use it as a toolkit for whatever program we're working with. Can include a module into a class by doing a mixin. And then use the methods in that module inside that class. Becomes the tools of that class. Think of modules as toolkits and it gives you different tools for the things to use. 
 
-# Final Ruby Project: Classes, Modules, Mix ins - 3 - methods
+# Final Ruby Project: Classes, Modules, Mix ins - 3 - Modules
 
 Need a way to authenticate the user. Anticipating we'll get a username, and a password we need to authenticate it. Will get a hash password, and have to authenticate it.
 
@@ -453,3 +453,21 @@ In last video, directly called the module `Crud` and the method in it. Called it
 This type of notation when used in classes, called a class method. Does not require an instance of an object to make this method work. Can directly call it, by calling the name of the class or the module in this case. Will see methods like this that will be used at class level. 
 
 Instance methods however, will go for next. Just the method associated with an object of a class.
+
+# Final Ruby Project: Classes, Modules, Mix ins - 4 - Include
+
+Had worked with initial Student class. If we go back and remove `self` from all the methods in the Crud module. And if we add `include Crud` after defining the Student.rb class, then inside of it, we can just call:
+
+```ruby
+hashed_password = mashrur.create_hash_digest(mashrur.password)
+puts hashed_password 
+
+# Module CRUD activated
+# $2a$12$lvtGpzxcXbAyBNjUUAaDTurums1D6uXPVDBl3hjuayT3EmgQZcfCa
+```
+
+And we won't get back an error.
+
+We're creating an object of the Student class, and able to include/mix in the functionality we got from the module, and use it directly on the object itself. Really increases the capacity of what you can do with objects and mixins. Can make the functionality of the modules available to your class. Opens up all sorts of possibilities.
+
+Have a User class with all sorts of attributes, have modules with mix-ins. 
