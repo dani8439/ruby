@@ -445,3 +445,11 @@ require 'crud'
 ```
 
 Except when running in main.rb, it doesn't work. Put `Crud.` in front of all method names in `crub.rb` then run the methods by calling `Crud.create_secure_users(users)`. That will not cause errors. Better to use the class mixin. 
+
+# 'self' notation for method names
+
+In last video, directly called the module `Crud` and the method in it. Called it by the module name, then the method name. Can similarly use `self.` for all of them.
+
+This type of notation when used in classes, called a class method. Does not require an instance of an object to make this method work. Can directly call it, by calling the name of the class or the module in this case. Will see methods like this that will be used at class level. 
+
+Instance methods however, will go for next. Just the method associated with an object of a class.

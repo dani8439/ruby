@@ -12,15 +12,15 @@ module Crud
   require 'bcrypt'
   puts "Module CRUD activated"
 
-  def Crud.create_hash_digest(password)
+  def self.create_hash_digest(password)
     BCrypt::Password.create(password)
   end 
 
-  def Crud.verify_hash_digest(password)
+  def self.verify_hash_digest(password)
     BCrypt::Password.new(password)
   end
 
-  def Crud.create_secure_users(list_of_users)
+  def self.create_secure_users(list_of_users)
       # going through and creating a hash_digest of our users. 
     list_of_users.each do |user_record|
     user_record[:password] = create_hash_digest(user_record[:password])
@@ -34,7 +34,7 @@ module Crud
   # new_users =  create_secure_users(users)
   # puts new_users
 
-  def Crud.authenticate_user(username, password, list_of_users)
+  def self.authenticate_user(username, password, list_of_users)
     list_of_users.each do |user_record|
       # if we have the username matching, and then the verified hash digest of the password equals the password sent in... 
       if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password 
