@@ -42,3 +42,23 @@ MVC Pattern - separation of presentation layer (what the user of the application
 
 **Controller** Invisible to the user, technically fall in the back end. Can think of them as the brains of the application. users_controller, posts_controller, articles_controller, stocks_controller. 
 
+# Model, View, Controller and Rails App Structure - Text References 
+
+MVC - Model, View, Controller
+
+General flow of Rails application:
+
+-> Request made at browser
+
+-> Request received at router of rails application
+
+-> Request routed to appropriate action in a controller
+
+-> Controller#action either renders a view template or communicates with model
+
+-> Model communicates with database
+
+-> Model sends back information to controller
+
+-> Controller renders view
+
