@@ -62,3 +62,53 @@ General flow of Rails application:
 
 -> Controller renders view
 
+# Root, route, controller, more MVC and say "Hello World"
+
+1. Display "Hellow World! in browser 
+2. Formalize Using Rails convention
+3. Review MVC diagram for information flow
+
+Need to define a root route within config folder. 
+
+```ruby
+# config 
+Rails.application.routes.draw do
+  root 'application#hello'
+end
+
+# application_controller.rb
+  def hello 
+    render html: 'Hello World!'
+  end 
+```
+
+Although not quite right, don't want it to show up from within the applicationcontroller. Want to use the erb template files. Want to follow rails conventions to get the same view in our browswer and utilize layout file.
+
+**Conventional Expectations** 
+- Define a route that points to a controller#action 
+- Have an appropriately named controller, for example: if dealing with layouts or static pages of the application, a name could be pages_controller 
+- Have an appropriately named action, for example: if dealing with a homepage, the action/method could be named home. 
+- If done this way, under views, rails will expect a pages folder (named for the pages controller) and a home.html.erb template (named for the home action).
+
+`rails g controller pages` in the terminal to generate the new controller which will generate files we need.
+
+```ruby
+#routes.rb 
+Rails.application.routes.draw do
+  root 'pages#home'
+end
+
+# Pages_controller.rb
+class PagesController < ApplicationController
+
+  def home 
+  end 
+end
+
+# Create a `home.hmtl.erb` file in the views/pages folder and put inside of it
+Hello World!
+
+```
+
+MVC Diagram -
+User makes a request from frontend browser. Received by a router - sends it to the appropriate action within a controller, and then depending on if the request requires database or model interaction, it'll work with the appropriate model, send info back to the controller, which will then use the appropriate view template to send info back to the users frontend browser. 
