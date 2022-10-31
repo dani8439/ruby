@@ -133,3 +133,7 @@ db/ development and test data is held here. (sqlite)
 All the files listed below. all the gems we save, get saved in the lock file. 
 
 hidden files. all start with a `.` Don't show up by default. Click on the widget to show hidden files when in a repository. 
+
+You can find the details of the individual folders in a Rails application (when it's created) here: [https://guides.rubyonrails.org/getting_started.html](https://guides.rubyonrails.org/getting_started.html)
+
+Scroll down to section 3.2, skip the part about creating the new application and then you will find a listing of all the folders and their purpose in-depth.
