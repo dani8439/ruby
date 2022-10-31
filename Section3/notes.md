@@ -85,7 +85,7 @@ end
 Although not quite right, don't want it to show up from within the applicationcontroller. Want to use the erb template files. Want to follow rails conventions to get the same view in our browswer and utilize layout file.
 
 **Conventional Expectations** 
-- Define a route that points to a controller#action 
+- Define a route that points to a `controller#action` 
 - Have an appropriately named controller, for example: if dealing with layouts or static pages of the application, a name could be pages_controller 
 - Have an appropriately named action, for example: if dealing with a homepage, the action/method could be named home. 
 - If done this way, under views, rails will expect a pages folder (named for the pages controller) and a home.html.erb template (named for the home action).
@@ -112,3 +112,24 @@ Hello World!
 
 MVC Diagram -
 User makes a request from frontend browser. Received by a router - sends it to the appropriate action within a controller, and then depending on if the request requires database or model interaction, it'll work with the appropriate model, send info back to the controller, which will then use the appropriate view template to send info back to the users frontend browser. 
+
+# Structure of a Rails Application
+
+App folder - assets. Static images, etc. 
+Stylesheets - css. 
+Channels - where we work with application cable which make real time communcations available in rails. Like chat applications. 
+Controllers - all our controllers will be housed. (all inherit from ApplicationController as subclasses.)
+Helpers - helper functions or methods that we'll use in our view templates. Exclusively used with views only. 
+JS - packs/application.js - our main js manifest file. Makes js available for use throughout our application. 
+Models - store all our models. (Users, Pottery, etc)
+Views - All the view files. 
+
+Bin/stubs Not going to worry about that
+
+Config/ configuration for applications will take place here. Most important to keep track of is the `routes.rb` file.
+
+db/ development and test data is held here. (sqlite)
+
+All the files listed below. all the gems we save, get saved in the lock file. 
+
+hidden files. all start with a `.` Don't show up by default. Click on the widget to show hidden files when in a repository. 
