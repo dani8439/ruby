@@ -137,3 +137,13 @@ hidden files. all start with a `.` Don't show up by default. Click on the widget
 You can find the details of the individual folders in a Rails application (when it's created) here: [https://guides.rubyonrails.org/getting_started.html](https://guides.rubyonrails.org/getting_started.html)
 
 Scroll down to section 3.2, skip the part about creating the new application and then you will find a listing of all the folders and their purpose in-depth.
+
+# Version Control with Git
+
+Can go back to a previous version. We start the version control process by tracking the files and folders in the application. When we start tracking is when the initial state of the application witll be. Usually this is done as soon as the application is created. 
+
+When we make changes to our code or add new code/files/folders, etc, we add (if we choose) the new files/folders to track as well. Once we're happy with our new changes, we make a 'commit of our code. 'Commits' include a helpful message as well with information about the code being saved or committed. 
+
+Every time you make a commit. It copies and saves how your app looks at the time of that commit. 
+
+Now, we will have a history of our past commits. And then if necessary, we can 'revert' our changes and go back to an earlier version of our code. 
