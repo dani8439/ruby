@@ -164,7 +164,7 @@ Upon download and installation in your local machine (AWS Cloud9 comes pre-insta
 git config --global user.name "Your name"
 git config --global user.email youremail@example.com
 ```
-replace "Your name" and youremail@example.com above with your actual name and email address which you want shown on your repos.
+replace "Your name" and `youremail@example.com` above with your actual name and email address which you want shown on your repos.
 
 To display git config settings, use the following command:
 
