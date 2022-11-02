@@ -237,3 +237,36 @@ For future pushes to repository:
 https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
 
 https://learn.shayhowe.com/html-css/
+
+# Add About Page Homework Assignment
+
+```ruby
+# routes file 
+Rails.application.routes.draw do
+  root 'pages#home'
+  # Add about route with get request
+  get 'about', to: 'pages#about'
+end
+
+# pages controller add
+class PagesController < ApplicationController
+
+  def home 
+  end 
+
+  def about 
+  end
+end
+
+# views/pages/
+# about.html.erb
+<h1>This is the About page</h1>
+
+```
+
+in the settings for emmet settings.json file
+```
+  "emmet.includeLanguages": {
+    "*.erb": "html", "ruby": "html"
+  }
+```
