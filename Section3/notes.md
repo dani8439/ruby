@@ -337,3 +337,21 @@ Your app will then be accessible from the following browser URL ->
 https://newnameofyourapp.herokuapp.com
 
 (All of this information is outdated as Heroku will no longer support free demo accounts as of the end of this month.)
+
+# The back-end: Databases and tables in rails
+
+Database layer is the persistence layer of the application. All data resides here. Communicate it through the models. 
+
+Back-end is the Database and the models. 
+
+Relational databases. (User, and then articles with a user_id attribute on it, etc, etc.) (has many, has many through, belongs to, etc, etc.)
+
+**CRUD** - Create, Read, Update, Delete. Basis of operations for any database system. 
+
+Need a query interface or language to perform it, SQL, etc (structured query language). [Microsoft SQL Server, PostGresSQL, Oracle]
+
+Rails uses a middleman known as ActiveRecrod - ORM - Object Relational Mapper to communicate between the Rails application code and the database. ORM translates and aids in communication between the two. Don't have to manually type queries. Rails version of ActiveRecord follows ActiveRecord pattern. 
+
+If you look at the models folder of your application, have `application_record.rb `file. It inherits from `ActiveRecord::Base`. 
+
+You can simply write Ruby code, which gets translated to SQL queries, and your application interacts with the database, and all done using the models layer.
