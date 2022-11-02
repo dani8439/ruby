@@ -233,3 +233,7 @@ For future pushes to repository:
 2. Know how to style classes and ids using CSS at a basic level.
 3. Know the difference between in-line and external CSS used in HTML documents.
 4. At a basic level know what forms and tables are and how to create them.
+
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+
+https://learn.shayhowe.com/html-css/
