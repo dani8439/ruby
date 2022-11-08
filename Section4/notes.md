@@ -157,3 +157,35 @@ article.save
 article = Article.new(title: "third article", description: "description of third article")
 article.save
 ```
+
+# CRUD Operations from the Rails console 
+
+- Read 
+- Update 
+- Delete 
+
+
+`Ctrl + L` clears the console. 
+
+```ruby 
+# To Read 
+Article.find(2) # by the id 
+
+Article.first 
+Article.last
+
+# setting the article object to a variable 
+article = Article.find(2)
+articles = Article.all 
+
+article.title # "second article" 
+article.description # "description of second article"
+
+# To Update 
+article.description = "edited - description of second article"
+article.save # this way it will hit the datatabse
+
+# To Delete
+article.destroy # this hits the database right away, no need to save it. 
+
+```
