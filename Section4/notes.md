@@ -221,3 +221,45 @@ end
 # rails console
 reload! # Will reload without having to stop and start the console once changes are made
 ```
+
+# Show articles (route, action, view)
+
+Add resources to routes to get all routes we want for articles (show, edit, index, etc)
+```ruby
+Rails.application.routes.draw do
+  root 'pages#home'
+
+  get 'about', to: 'pages#about'
+  resources :articles, only: [:show]
+end
+```
+
+Then need to create `ArticlesController` with proper methods 
+```ruby 
+class ArticlesController < ApplicationController 
+  
+  def show 
+  end
+end 
+
+# Then create articles folder in views and show.html.erb
+<h1>Showing article details</h1>
+```
+
+Then have to put proper show method in, using an instance method. 
+
+```ruby
+ def show 
+    # instance variable so it's available within the view
+    @article = Article.find(params[:id])
+ end 
+
+# then update the view 
+<h1>Showing article details</h1>
+
+# embedded ruby tags
+<p><strong>Title:</strong> <%= @article.title %></p>
+<p><strong>Description:</strong> <%= @article.description%></p>
+```
+
+Using `byebug` stick it into the model, it'll stop the server and drop into debugger in the console. Except byebug has been deprecated and replaced by `debug`. insert `debugger` to get it up and running in the controller. `continue` gets you to get out of debugger when in the console after you've fiddled around with the params to your liking. 
