@@ -189,3 +189,35 @@ article.save # this way it will hit the datatabse
 article.destroy # this hits the database right away, no need to save it. 
 
 ```
+
+# Validations 
+
+```ruby 
+class Article < ApplicationRecord 
+  validates :title, presence: true 
+  validates :description, presence: true 
+end 
+
+# rails console 
+article = Article.new 
+ => 
+#<Article:0x00007fee40cf1990                                             
+...                                                                      
+3.0.0 :002 > article.save 
+ => false 
+3.0.0 :003 > article.errors.full_messages 
+ => ["Title can't be blank", "Description can't be blank"] 
+3.0.0 :004 > 
+```
+
+To avoid issues of titles or descriptions being too short, can add minimum and maximum length of characters 
+
+```ruby 
+class Article < ApplicationRecord 
+  validates :title, presence: true, length: {minimum: 6, maximum: 100}
+  validates :description, presence: true, length: {minimum: 10, maximum: 300 }
+end 
+
+# rails console
+reload! # Will reload without having to stop and start the console once changes are made
+```
