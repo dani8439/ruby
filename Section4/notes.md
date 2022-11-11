@@ -330,3 +330,55 @@ strong params for saving an article on create
     redirect_to @article 
   end 
 ```
+
+# Messaging - validation and Flash Messagess
+
+```ruby 
+  def create 
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    if @article.save 
+      redirect_to @article 
+    else 
+    # to avoid error in new Rails version 
+      render :new, status: :unprocessable_entity
+    end 
+  end 
+
+# within the index html 
+<% if @article.errors.any? %> 
+  <h2>The following errors prevented the article from being saved</h2> 
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %> 
+      <li><%= msg %></li>
+    <% end %>
+  </ul> 
+<% end %> 
+
+# and need this in controller so won't render with an error the first time .
+  def new 
+    @article = Article.new 
+  end 
+
+```
+
+To add flash message
+
+```ruby 
+  def create 
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    if @article.save 
+      flash[:notice] = "Article was created successfully."
+      redirect_to @article 
+    else 
+      render :new, status: :unprocessable_entity
+    end 
+  end 
+
+# application.html.erb: 
+ <body>
+    <% flash.each do |name, msg| %>
+      <%= msg %> 
+    <% end %>  
+    <%= yield %>
+  </body>
+```
