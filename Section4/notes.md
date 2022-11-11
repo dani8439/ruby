@@ -263,3 +263,40 @@ Then have to put proper show method in, using an instance method.
 ```
 
 Using `byebug` stick it into the model, it'll stop the server and drop into debugger in the console. Except byebug has been deprecated and replaced by `debug`. insert `debugger` to get it up and running in the controller. `continue` gets you to get out of debugger when in the console after you've fiddled around with the params to your liking. 
+
+# Articles Index 
+
+`rails routes --expanded` will show in console updated routes. 
+
+```ruby 
+# added :index to routes for articles. 
+  resources :articles, only: [:show, :index]
+
+# added index method in articles controller
+ def index 
+    @articles = Article.all 
+  end 
+
+# added index.html.erb in views
+<h1>Articles listing page</h1>
+
+<table> 
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %> 
+    <tr>
+      <td><%= article.title %></td>
+      <td><%=</td>
+      <td>Placeholder</td>
+    </tr>
+    <% end %> 
+  </tbody>
+</table> 
+```
+
