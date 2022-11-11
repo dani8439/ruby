@@ -300,3 +300,20 @@ Using `byebug` stick it into the model, it'll stop the server and drop into debu
 </table> 
 ```
 
+# Forms: Build a new article creation form 
+
+```ruby
+# Added proper routes to build out create form
+resources :articles, only: [:show, :index, :new, :create]
+
+# in the controller create a new and create method
+  def new 
+  end 
+
+  def create 
+  end 
+
+# then a new.html.erb view 
+```
+
+Use form  helpers
