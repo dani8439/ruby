@@ -315,5 +315,18 @@ resources :articles, only: [:show, :index, :new, :create]
 
 # then a new.html.erb view 
 ```
-
 Use form  helpers
+
+# Create Action: Save newly created articles 
+
+strong params for saving an article on create
+```ruby
+   def create 
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    # render plain: @article.inspect
+    @article.save 
+    # redirect_to article_path(@article)
+    # shortened path 
+    redirect_to @article 
+  end 
+```
