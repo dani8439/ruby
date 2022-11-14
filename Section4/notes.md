@@ -382,3 +382,54 @@ To add flash message
     <%= yield %>
   </body>
 ```
+
+# Edit and update: update existing articles 
+
+```ruby 
+# routes 
+  resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+
+# controller 
+def edit 
+  @article = Article.find(params[:id])
+end 
+
+def update 
+  @article = Article.find(params[:id])
+  if @article.update(params.require(:article).permit(:title, :description))
+    flash[:notice] = "Article was updated successfully."
+    redirect_to @article
+  else 
+    render 'edit'
+  end 
+end 
+
+# edit.html.erb
+<h1>Edit an Article</h1>
+
+<% if @article.errors.any? %> 
+  <h2>The following errors prevented the article from being saved</h2> 
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %> 
+      <li><%= msg %></li>
+    <% end %>
+  </ul> 
+<% end %> 
+
+# have to update this bit from new to display existing article
+<%= form_with(model: @article, local: true)  do |f| %>
+  <p>
+    <%= f.label :title %></br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %></br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %> 
+  </p>
+<% end %> 
+```
