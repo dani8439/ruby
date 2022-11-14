@@ -457,3 +457,21 @@ resources :articles # exposed all the RESTful routes.
       <td><%= link_to 'Delete', article_path(article), data: { "turbo-method": :delete } %></td>
     # He uses link_to which does not work, but does with the data: { "turbo-method": delete}
 ```
+
+# User Interface - Add Layout Links
+
+```ruby
+#index.html.erb
+<td><%= link_to 'Edit', edit_article_path(article) %></td>
+
+# to have it span 3 columns
+<th colspan="3">Actions</th>
+
+<%= link_to 'Create new article', new_article_path %>
+
+# show page
+<%= link_to 'Edit', edit_article_path(@article) %> | 
+# can't get pop up link_to to work to confirm before deletion.
+<%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete } %> |
+<%= link_to 'Return to articles listing', articles_path %>
+```
