@@ -433,3 +433,27 @@ end
   </p>
 <% end %> 
 ```
+
+# Delete: delete articles
+
+RESTful routes - representational state transfer - mapping HTTP verbs (get, post, put/patch, delete) to CRUD actions
+
+resources provide REST-ful routes to Rails resources
+```ruby 
+resources :articles # exposed all the RESTful routes.
+
+# application controller 
+  def destroy 
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
+  end
+
+# index.html.erb
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= button_to 'Delete', article_path(article), method: :delete %></td>
+      <td><%= link_to 'Delete', article_path(article), data: { "turbo-method": :delete } %></td>
+    # He uses link_to which does not work, but does with the data: { "turbo-method": delete}
+```
