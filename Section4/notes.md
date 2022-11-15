@@ -530,3 +530,46 @@ resources :articles # exposed all the RESTful routes.
       <%= msg %> 
     <% end %>  
 ```
+
+# Wrapping up and Heroku Deployment
+Heroku instructions no longer valid as they've deprecated free dynos. 
+
+Production deploy instructions (the old way)
+
+We used the following steps to deploy our application to production (using Heroku). If you have not set up a Heroku account and deployed the application at the end of section 3 (including all the setup steps like installing Heroku CLI and creating a heroku app), you are encouraged to do so now before moving forward. If you would rather not deploy to production, then you can safely skip this step.
+
+Steps we followed:
+
+- verify Gemfile
+
+- issue the following command in the terminal bundle install --without production
+
+- make a commit of code
+
+-- `git add -A`
+
+-- `git commit -m "helpful message depending on what you are committing to your repo"`
+
+To deploy to heroku:
+
+`git push heroku master`
+
+To push to GitHub repo:
+
+`git push origin master`
+
+Since we now have a db component to our application with the articles table, we will need to run migrations in production so the production articles table is created. To run migrations at heroku, you can use the following command:
+
+`heroku run rails db:migrate`
+
+You can preview your production app by issuing the following command from the terminal:
+
+`heroku open`
+
+or,
+
+You can directly pull up a browser window and paste in the name of your application. It'll take the following format:
+
+https://yourappname.herokuapp.com
+
+Congratulations on completing Section 4, well done!
