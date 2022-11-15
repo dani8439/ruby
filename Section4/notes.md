@@ -475,3 +475,58 @@ resources :articles # exposed all the RESTful routes.
 <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete } %> |
 <%= link_to 'Return to articles listing', articles_path %>
 ```
+
+# DRY up the code
+
+- refactoring 
+- extract away redundencies in the code.
+
+```ruby
+# articles controller 
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
+  def create 
+    @article = Article.new(article_params)
+    if @article.save 
+      flash[:notice] = "Article was created successfully."
+      redirect_to @article 
+    else 
+      render :new, status: :unprocessable_entity
+    end 
+  end  
+
+  def update 
+    if @article.update(article_params)
+      flash[:notice] = "Article was updated successfully."
+      redirect_to @article
+    else 
+      render 'edit'
+    end 
+  end 
+
+  private 
+
+  def set_article
+    @article = Article.find(params[:id])
+  end 
+
+  def article_params 
+    params.require(:article).permit(:title, :description)
+  end 
+```
+
+## Rendering a partial
+
+```html
+
+<!-- application.html.erb -->
+   <body>
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </body>
+
+<!-- _messages.html.erb --> 
+    <% flash.each do |name, msg| %>
+      <%= msg %> 
+    <% end %>  
+```
